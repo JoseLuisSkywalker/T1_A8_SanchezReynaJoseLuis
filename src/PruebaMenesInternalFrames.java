@@ -1,5 +1,7 @@
 import java.awt.*;
+
 import javax.swing.*;
+
 
 
 class VentanaInicio extends JFrame{
@@ -8,6 +10,11 @@ class VentanaInicio extends JFrame{
 	
 	JToolBar toolBar; 
 	
+	GridBagLayout gbl = new GridBagLayout(); 
+	GridBagConstraints gbc = new GridBagConstraints();
+	
+	JPanel panel1; 
+	
 	public VentanaInicio() {
 		//construcción ventana
 		setLayout(new BorderLayout());
@@ -15,7 +22,6 @@ class VentanaInicio extends JFrame{
 	    setTitle("Lab Master - Test Booking");
 	    setSize(1000, 700);
 	    setLocationRelativeTo(null); 
-	    setVisible(true);
 	    
 	    //-------------- MENU ----------------
 	    JMenuBar menuBar = new JMenuBar();
@@ -190,20 +196,63 @@ class VentanaInicio extends JFrame{
 	    
 	    //----------------- primer panel -------------------- 
 	    
-	    JPanel panel1 = new JPanel();
-        panel1.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
-        panel1.setBorder(BorderFactory.createTitledBorder("Patient Information"));
+	    panel1 = new JPanel(gbl);
+	    
+        
+        panel1.setBorder(BorderFactory.createLineBorder(Color.black));
+        
 
-        JLabel labelPatientId = new JLabel("Patient ID:");
+        JLabel labelPatientId = new JLabel("Patient ID: ");
+        agregarComponentes(labelPatientId, 0, 0, 1, 1); 
+        
         JTextField textPatientId = new JTextField(15);
-
-        panel1.add(labelPatientId);
-        panel1.add(textPatientId);
+        agregarComponentes(textPatientId, 1, 0, 1, 1); 
+        
+      
+        JLabel labelDate = new JLabel("         Date: "); 
+        agregarComponentes(labelDate, 2, 0, 1, 1); 
+        
+        JComboBox<String> comboDate = new JComboBox<>(); 
+        comboDate.addItem("dd/mm/aaaa"); 
+        agregarComponentes(comboDate, 3, 0, 1, 1);
 
         add(panel1, BorderLayout.CENTER);
+        
+        JLabel labelTime = new JLabel(" * Time (hh:mm): ");
+        agregarComponentes(labelTime, 4, 0, 1, 1);
+        
+        JTextField txtFieldHours = new JTextField(2); 
+        agregarComponentes(txtFieldHours, 5, 0, 1, 1);
+        JLabel labelPuntos = new JLabel(":"); 
+        agregarComponentes(labelPuntos, 6, 0, 1, 1); 
+        JTextField txtFieldMinutes = new JTextField(2); 
+        agregarComponentes(txtFieldMinutes, 7, 0, 1, 1); 
+       
+        JLabel labelLabNo = new JLabel("        Lab No. "); 
+        agregarComponentes(labelLabNo, 8, 0, 1, 1); 
+        
+        JTextField txtFieldLab = new JTextField(5); 
+        agregarComponentes(txtFieldLab, 9, 0, 1, 1); 
+        
+        
+        
 	    
-	   
+	   setVisible(true);
+	  
 	} 
+	
+	public void agregarComponentes(JComponent componente, int x, int y, int w, int h) {
+		gbc.gridx = x;
+		gbc.gridy = y; 
+		gbc.gridwidth = w; 
+		gbc.gridheight = h;
+		gbl.setConstraints(componente, gbc); 
+		panel1.add(componente); 
+		
+	}
+	
+	
+	
 	
 	
 
