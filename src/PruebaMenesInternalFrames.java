@@ -20,7 +20,7 @@ class VentanaInicio extends JFrame{
 		setLayout(new BorderLayout());
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    setTitle("Lab Master - Test Booking");
-	    setSize(1000, 700);
+	    setSize(1200, 700);
 	    setLocationRelativeTo(null); 
 	    
 	    //-------------- MENU ----------------
@@ -201,7 +201,7 @@ class VentanaInicio extends JFrame{
         
         panel1.setBorder(BorderFactory.createLineBorder(Color.black));
         
-
+        	//widgets primer panel
         JLabel labelPatientId = new JLabel("Patient ID: ");
         agregarComponentes(labelPatientId, 0, 0, 1, 1); 
         
@@ -209,7 +209,7 @@ class VentanaInicio extends JFrame{
         agregarComponentes(textPatientId, 1, 0, 1, 1); 
         
       
-        JLabel labelDate = new JLabel("         Date: "); 
+        JLabel labelDate = new JLabel("Date: "); 
         agregarComponentes(labelDate, 2, 0, 1, 1); 
         
         JComboBox<String> comboDate = new JComboBox<>(); 
@@ -218,7 +218,7 @@ class VentanaInicio extends JFrame{
 
         add(panel1, BorderLayout.CENTER);
         
-        JLabel labelTime = new JLabel(" * Time (hh:mm): ");
+        JLabel labelTime = new JLabel(" * Time (hh:mm):");
         agregarComponentes(labelTime, 4, 0, 1, 1);
         
         JTextField txtFieldHours = new JTextField(2); 
@@ -233,6 +233,79 @@ class VentanaInicio extends JFrame{
         
         JTextField txtFieldLab = new JTextField(5); 
         agregarComponentes(txtFieldLab, 9, 0, 1, 1); 
+        
+        JLabel labelName = new JLabel("Name: "); 
+        agregarComponentes(labelName, 0, 1, 1, 1); 
+        
+        JComboBox<String> comboName = new JComboBox<>(); 
+        comboName.addItem("MR. "); 
+        comboName.addItem("MRS. "); 
+        comboName.addItem("Ms. "); 
+        comboName.addItem("Sr. "); 
+        agregarComponentes(comboName, 1, 1, 1, 1); 
+        
+        JTextField txtFieldName = new JTextField(15);
+        agregarComponentes(txtFieldName, 2, 1, 1, 1); 
+        
+        JLabel labelSex = new JLabel("Sex"); 
+        agregarComponentes(labelSex, 0, 2, 1, 1); 
+        
+        JComboBox<String> comboSex = new JComboBox<>(); 
+        comboSex.addItem("MALE"); 
+        comboSex.addItem("FEMALE"); 
+        agregarComponentes(comboSex, 1, 2, 1, 1);
+        
+        JLabel labelAge = new JLabel("Age:");
+        agregarComponentes(labelAge, 2, 2, 1, 1); 
+        
+        JTextField txtFieldAge = new JTextField(5); 
+        agregarComponentes(txtFieldAge, 3, 2, 1, 1); 
+        
+        JLabel labelMonth = new JLabel("Month"); 
+        agregarComponentes(labelMonth, 4, 2, 1, 1); 
+        
+        JTextField txtFieldMonth = new JTextField(5); 
+        agregarComponentes(txtFieldMonth, 5, 2, 1, 1); 
+        
+        JLabel labelDays = new JLabel("Days"); 
+        agregarComponentes(labelDays, 6, 2, 1, 1); 
+        
+        JTextField txtFieldDays = new JTextField(5); 
+        agregarComponentes(txtFieldDays, 7, 2, 1, 1); 
+        
+        JLabel labelSample = new JLabel("Sample By"); 
+        agregarComponentes(labelSample, 8, 2, 1, 1); 
+        
+        JTextField txtFieldSample = new JTextField(10); 
+        agregarComponentes(txtFieldSample, 9, 2, 1, 1); 
+        
+        JLabel labelReffered = new JLabel("Reffered By:"); 
+        agregarComponentes(labelReffered, 0, 3, 1, 1); 
+        
+        JTextField txtFieldReffered = new JTextField(10);
+        agregarComponentes(txtFieldReffered, 1, 3, 1, 1); 
+        
+        JTextField txtFieldReffered2 = new JTextField(10); 
+        agregarComponentes(txtFieldReffered2, 2, 3, 1, 1); 
+        
+        JLabel labelPanelCode = new JLabel("Panel Code"); 
+        agregarComponentes(labelPanelCode, 3, 3, 1, 1); 
+        
+        JTextField txtFieldPanelCode = new JTextField(10); 
+        agregarComponentes(txtFieldPanelCode, 4, 3, 1, 1); 
+        
+        JLabel labelPanelID = new JLabel("Panel ID"); 
+        agregarComponentes(labelPanelID, 3, 4, 1, 1);
+        
+        JTextField txtFieldPanelID = new JTextField(10); 
+        agregarComponentes(txtFieldPanelID, 4, 4, 1, 1); 
+        
+        JLabel labelEmail = new JLabel("e-mail");
+        agregarComponentes(labelEmail, 3, 5, 1, 1); 
+        
+        JTextField txtFieldEmail = new JTextField(10); 
+        agregarComponentes(txtFieldEmail, 4, 5, 1, 1); 
+        
         
         
         
